@@ -1,0 +1,27 @@
+<?php
+return [
+    'list-slider' => 'Danh sách Slider',
+	'add-new-slider' => 'Thêm mới Slider',
+	'create-slider-success' => 'Thêm mới thành công',
+	'slider' => 'Slider',
+	'edit-slider' => 'Chỉnh sửa Slider',
+	'list' => 'Danh sách',
+	'all-slider' => 'Danh sách Slider',
+	'slider-category' => 'Danh mục Slider',
+	'update-slider-success' => 'Cập nhật Slider thành công',
+	'content' => 'Nội dung',
+	'data' => 'Dữ liệu',
+	'id' => 'Id',
+	'title' => 'Tiêu đề',
+	'author' => 'Tác giả',
+	'date_update' => 'Cập nhật',
+	'from-slider-title' => 'Lấy từ tiêu đề',
+	'status' => 'Trạng thái',
+	'type' => 'Định dạng',
+	'youtube_id' => 'Youtube Id',
+	'null-for-image' => 'Để trống nếu là Image',
+	'thumbnail' => 'Thumbnail',
+	'enable-slider-success' => 'Bật Slider thành công',
+	'disable-slider-success' => 'Tắt Slider thành công',
+	'destroy-slider-success' => 'Xóa Slider thành công'
+];

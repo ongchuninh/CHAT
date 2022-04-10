@@ -1,0 +1,22 @@
+{
+    "name": "gamota/slider",
+    "description": "GamotaCms slider module",
+    "authors": [{
+        "name": "tannt",
+        "email": "tannt@appota.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Gamota\\Page\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "phambinhcms-module": {
+            "type": "module",
+            "alias": "promise",
+            "name": "promise"
+        }
+    }
+}

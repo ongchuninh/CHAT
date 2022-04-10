@@ -1,0 +1,25 @@
+{
+    "name": "gamota/event",
+    "description": "Event Web for Gamota's Gamer",
+    "authors": [
+        {
+            "name": "tannt",
+            "email": "tannt@appota.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Gamota\\Event\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+    ,
+    "extra": {
+        "phambinhcms-module": {
+            "type": "module",
+            "alias": "event",
+            "name": "event"
+        }
+    }
+}

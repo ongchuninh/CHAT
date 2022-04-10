@@ -1,0 +1,25 @@
+{
+    "name": "gamota/gallery",
+    "description": "GamotaCms gallery module",
+    "authors": [
+        {
+            "name": "tannt",
+            "email": "tannt@appota.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Gamota\\Gallery\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+    ,
+    "extra": {
+        "phambinhcms-module": {
+            "type": "module",
+            "alias": "gallery",
+            "name": "gallery"
+        }
+    }
+}
