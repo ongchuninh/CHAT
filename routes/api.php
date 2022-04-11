@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,22 +14,6 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-});
-Route::group(['namespace' => 'Api','middleware' => ['web']], function () {
-    Route::get('get_list_game','APIController@getListgame')->name('api.game.get_list_game');
-    Route::get('get_language','APIController@getListLanguage')->name('api.language.get_language');
-
-    Route::post('contact','APIController@contact')->name('api.contact');
-
-    Route::get('change_languege','APIController@changeLanguege')->name('api.changeLanguage');
-
-
-    Route::get('get_game','APIController@getGame')->name('api.getGame');
-
-   
-
-    
-
 });

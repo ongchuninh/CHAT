@@ -1,29 +1,47 @@
-@extends('Cms::layouts.auth')
+@extends('layouts.app')
 
-<!-- Main Content -->
 @section('content')
-    <form class="forget-form" action="{{ url('/password/email') }}" method="post" novalidate="novalidate" style="display: block;">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <h3>Quên mật khẩu ?</h3>
-        <p> Nhập địa chỉ email của bạn để reset mật khẩu. </p>
-        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-            <div class="input-icon">
-                <i class="fa fa-envelope"></i>
-                <input value="{{ old('email') }}" class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Địa chỉ email" name="email">
-                @if ($errors->has('email'))
-                    <span class="help-block">
-                        <strong>{{ $errors->first('email') }}</strong>
-                    </span>
-                @endif
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Reset Password') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <form method="POST" action="{{ route('password.email') }}">
+                        @csrf
+
+                        <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Send Password Reset Link') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="form-actions">
-            <button type="submit" class="btn green pull-right"> Gửi </button>
-        </div>
-        <div class="forget-password">
-            <p> 
-                <a href="{{ url('/login') }}" id="forget-password">Trở về trang đăng nhập</a>
-            </p>
-        </div>
-    </form>
+    </div>
+</div>
 @endsection
